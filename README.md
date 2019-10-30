@@ -7,6 +7,8 @@ https://github.com/Nehal-Pawar/Apache-Spark/tree/master/SparkProject1/src/pawar/
 
 •	Explored the architecture and processing of Apache Spark as a framework through research with a faculty member and deployed the spark program on AWS EMR using SBT build tool
 
+•	Achieved faster result by broadcasting RDD instead of using Dataset for find most popular movie  
+
 •	Showcased implementation of BFS on Spark to find the degree of separation among super-hero social network
 
 ### _Item Based Collaborative filtering (Scala)_								    
