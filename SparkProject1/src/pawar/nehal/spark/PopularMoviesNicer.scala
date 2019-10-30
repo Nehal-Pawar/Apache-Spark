@@ -34,7 +34,7 @@ object PopularMoviesNicer {
  
   /** Our main function where the action happens */
   def main(args: Array[String]) {
-   
+    val start = System.currentTimeMillis()
     // Set the log level to only print errors
     Logger.getLogger("org").setLevel(Level.ERROR)
     
@@ -57,15 +57,19 @@ object PopularMoviesNicer {
     val flipped = movieCounts.map( x => (x._2, x._1) )
     
     // Sort
-    val sortedMovies = flipped.sortByKey()
+    val sortedMovies = flipped.sortByKey(false)
     
     // Fold in the movie names from the broadcast variable
     val sortedMoviesWithNames = sortedMovies.map( x  => (nameDict.value(x._2), x._1) )
     
     // Collect and print results
-    val results = sortedMoviesWithNames.collect()
+    val results = sortedMoviesWithNames.take(10)
     
     results.foreach(println)
+  
+    val stop = System.currentTimeMillis()
+    println(s"Processing took ${stop - start} ms.\n")
+  
   }
   
 }
